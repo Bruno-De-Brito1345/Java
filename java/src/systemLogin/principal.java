@@ -2,20 +2,18 @@ package systemLogin;
 
 import java.util.Scanner;
 import java.io.FileWriter;
-import java.io.FileFilter;
 import java.io.IOException;
+import java.io.FileFilter;
+
 
 public class principal {
-	/**
-	 * @param args
-	 * @throws IOException
-	 */
-	public static void main(String[] args) throws IOException {
+	
+	public static void main(String[] args) throws Exception {
 		Scanner leitura = new Scanner(System.in);
 		String sign ="";
 		String user = "Kratimus";
 		String password = "F22sola";
-		//FileWriter escrita = new FileWriter(user + ".txt");
+		FileWriter escrita = new FileWriter(user +".txt");
 		
 			System.out.println("Qual o seu login?");
 			sign = leitura.nextLine();
