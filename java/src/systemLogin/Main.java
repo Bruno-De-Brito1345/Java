@@ -40,6 +40,7 @@ public class Main{
 	 
 		file.write( String.valueOf(newUser));;
 		file.close();
-	
+	    System.out.println(newUser.getUserName() + ".json");
+	    
 	}
 }
