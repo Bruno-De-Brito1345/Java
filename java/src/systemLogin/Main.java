@@ -1,13 +1,18 @@
 package systemLogin;
 
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.module.FindException;
 
 
-public class main{
+
+public class Main{
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 		
 		Scanner info = new Scanner(System.in);
+				
 		
 		System.out.println("Vamos começar criando sua conta!! Por favor informe seu nome.");
 		
@@ -31,6 +36,10 @@ public class main{
 		
 		newUser.setEmail(dados);
 		
-		System.out.println(newUser.getName()+ ", "  + newUser.getUserName() + ", " + newUser.getEmail());
+		FileWriter file = new FileWriter(newUser.getUserName() + ".json");
+	 
+		file.write( String.valueOf(newUser));;
+		file.close();
+	
 	}
 }
