@@ -1,9 +1,15 @@
 package systemLogin;
 
 import java.util.Scanner;
+
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.module.FindException;
+import java.util.ArrayList;
 
 
 
@@ -11,36 +17,32 @@ public class Main{
 	
 	public static void main(String[] args) throws IOException{
 		
+				 
 		Scanner info = new Scanner(System.in);
-				
+		ArrayList lista = new ArrayList<>();
+		Accounts conta = new Accounts( );
+	
+		System.out.println("informe o seu nome: ");
+		var dados = info.next();
+		conta.setName(dados);
+		lista.add(conta.getName());
 		
-		System.out.println("Vamos começar criando sua conta!! Por favor informe seu nome.");
+		System.out.println("Informe seu nome de usário: ");
+		dados = info.next();
+		conta.setUserName(dados);
+		lista.add(conta.getUserName());
 		
-		Accounts newUser = new Accounts();
+		System.out.println("Informe o seu email");
+		dados = info.next();
+		conta.setEmail(dados);
+		lista.add(conta.getEmail());
 		
-		String dados = info.nextLine();
-		
-		newUser.setName(dados);
-		
-		System.out.println("Prazer em conehçe-lo(a), " + newUser.getName() + 
-				" , agora o senhor poderia informar o seu nome "
-				+ "de usuario e em seguida o seu email? ");
-		
-		dados = info.nextLine();
-		
-		newUser.setUserName(dados);
-		
-		System.out.println("Agora o seu email por favor :>.");
-		
-		dados = info.nextLine();
-		
-		newUser.setEmail(dados);
-		
-		FileWriter file = new FileWriter(newUser.getUserName() + ".json");
-	 
-		file.write( String.valueOf(newUser));;
-		file.close();
-	    System.out.println(newUser.getUserName() + ".json");
+		FileWriter file = new FileWriter(conta.getEmail()+".json");
+		GsonBuilder gson = new GsonBuilder();
+	
+		file.write(gson.toJson());
+	
+	
 	    
 	}
 }
