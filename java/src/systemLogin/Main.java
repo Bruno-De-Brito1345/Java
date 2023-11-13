@@ -2,10 +2,6 @@ package systemLogin;
 
 import java.util.Scanner;
 
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.module.FindException;
@@ -23,26 +19,27 @@ public class Main{
 		Accounts conta = new Accounts( );
 	
 		System.out.println("informe o seu nome: ");
-		var dados = info.next();
+		var dados = info.nextLine();
 		conta.setName(dados);
-		lista.add(conta.getName());
 		
 		System.out.println("Informe seu nome de usário: ");
-		dados = info.next();
+		dados = info.nextLine();
 		conta.setUserName(dados);
-		lista.add(conta.getUserName());
+	   
 		
 		System.out.println("Informe o seu email");
-		dados = info.next();
+		dados = info.nextLine();
 		conta.setEmail(dados);
-		lista.add(conta.getEmail());
 		
-		FileWriter file = new FileWriter(conta.getEmail()+".json");
-		GsonBuilder gson = new GsonBuilder();
-	
-		file.write(gson.toJson());
-	
-	
+		
+		FileWriter file = new FileWriter(conta.getEmail()+".txt");
+	    
+		lista.add(conta);
+		
+		file.write(lista.toString());
+	    file.close();
+	   
+	    System.out.println(lista);
 	    
 	}
 }

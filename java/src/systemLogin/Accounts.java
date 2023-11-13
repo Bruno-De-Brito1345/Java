@@ -41,4 +41,9 @@ public class Accounts{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	@Override
+	public String toString() {
+		return "\n Nome: " + name + "\n Nome de usuário: "+ userName + "\n Email: " + email +"\n";
+	}
 }
