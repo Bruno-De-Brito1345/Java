@@ -44,6 +44,8 @@ public class Accounts{
 	
 	@Override
 	public String toString() {
-		return "\n Nome: " + name + "\n Nome de usuário: "+ userName + "\n Email: " + email +"\n";
+		return "\n Nome: " + name + "\n Usuário: "+ userName + "\n Email: "
+				+ email + "\n Senha: "+ password +"\n";
+		
 	}
 }
