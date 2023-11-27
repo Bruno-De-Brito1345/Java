@@ -24,12 +24,3 @@ public class Main{
 		   }    
 	}
  }
-			   
-		
-	
-		   
-		   
-
-	     
-	  
-

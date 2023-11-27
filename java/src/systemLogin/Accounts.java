@@ -8,7 +8,15 @@ public class Accounts{
 	 private String userName;
 	 private String email;
 	 private String password;
-	
+	 private String prePassword;
+
+	public String getPrePassword() {
+		return prePassword;
+	}
+
+	public void setPrePassword(String prePassword) {
+		this.prePassword = prePassword;
+	}
 
 	public String getName() {
 		return name;

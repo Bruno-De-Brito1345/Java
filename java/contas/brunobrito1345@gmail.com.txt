@@ -1,6 +1,0 @@
-[
- Nome: Bruno de Brito Barbosa
- Usuário: Kratimus1
- Email: brunobrito1345@gmail.com
- Senha: null
-]
